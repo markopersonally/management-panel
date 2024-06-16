@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 
 export default function NavBar() {
+  const ulClasses = "flex border-2 border-neutral-700";
+
   return (
     <nav>
-      <ul>
+      <ul className={ulClasses}>
         <li>
           <Link to="/">Home</Link>
         </li>
