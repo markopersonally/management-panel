@@ -1,14 +1,15 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home.jsx";
-import NavBar from "./components/NavBar";
+
 import Dashboard from "./components/Dashboard";
 import Users from "./components/Users";
 import Settings from "./components/Settings";
+import NavBar from "./components/NavBar.jsx";
 
 export default function App() {
   return (
-    <div>
+    <div className="flex">
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />

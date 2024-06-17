@@ -1,12 +1,15 @@
-import React from 'react';
+import H2 from "./UI/H2.jsx";
+import Section from "./UI/Section.jsx";
+import { BsPencil } from "react-icons/bs";
 
-export default function Dashboard(){
+export default function Dashboard() {
   return (
-    <div>
-      <h2>Dashboard</h2>
+    <Section>
+      <H2>
+        <BsPencil />
+        Dashboard
+      </H2>
       <p>Welcome to the admin dashboard!</p>
-    </div>
+    </Section>
   );
-};
-
-
+}
