@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { IoSettingsOutline } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
 import { BsPencil } from "react-icons/bs";
@@ -15,28 +15,49 @@ export default function NavBar() {
     <nav className={navClasses}>
       <ul className={ulClasses}>
         <li className={liClasses}>
-          <Link to="/" className={linkClasses}>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? `${linkClasses} bg-amber-600` : linkClasses
+            }
+            end
+          >
             <RxHome />
             Home
-          </Link>
+          </NavLink>
         </li>
         <li className={liClasses}>
-          <Link to="/dashboard" className={linkClasses}>
+          <NavLink
+            to="/dashboard"
+            className={({ isActive }) =>
+              isActive ? `${linkClasses} bg-amber-600` : linkClasses
+            }
+          >
             <BsPencil />
             Dashboard
-          </Link>
+          </NavLink>
         </li>
         <li className={liClasses}>
-          <Link to="/users" className={linkClasses}>
+          <NavLink
+            to="/users"
+            className={({ isActive }) =>
+              isActive ? `${linkClasses} bg-amber-600` : linkClasses
+            }
+          >
             <FaRegUser />
             Users
-          </Link>
+          </NavLink>
         </li>
         <li className={liClasses}>
-          <Link to="/settings" className={linkClasses}>
+          <NavLink
+            to="/settings"
+            className={({ isActive }) =>
+              isActive ? `${linkClasses} bg-amber-600` : linkClasses
+            }
+          >
             <IoSettingsOutline />
             Settings
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
