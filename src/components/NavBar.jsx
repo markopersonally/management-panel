@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { IoSettingsOutline } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
 import { BsPencil } from "react-icons/bs";
@@ -9,7 +9,7 @@ export default function NavBar() {
   const ulClasses = "p-8 flex flex-col gap-5 ";
   const liClasses = "border-2";
   const linkClasses =
-    "w-30 p-2 flex gap-2 items-center bg-amber-700 hover:bg-amber-600 active:bg-amber-600 text-amber-100 text-lg duration-500";
+    "w-30 p-2 flex gap-2 items-center bg-amber-700 hover:bg-amber-600 text-amber-100 text-lg duration-500";
 
   return (
     <nav className={navClasses}>
@@ -18,7 +18,7 @@ export default function NavBar() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? `${linkClasses} active:bg-amber-600` : linkClasses
+              isActive ? `${linkClasses} bg-amber-600` : linkClasses
             }
             end
           >
@@ -30,7 +30,7 @@ export default function NavBar() {
           <NavLink
             to="/dashboard"
             className={({ isActive }) =>
-              isActive ? `${linkClasses} active:bg-amber-600` : linkClasses
+              isActive ? `${linkClasses} bg-amber-600` : linkClasses
             }
           >
             <BsPencil />
@@ -41,7 +41,7 @@ export default function NavBar() {
           <NavLink
             to="/users"
             className={({ isActive }) =>
-              isActive ? `${linkClasses} active:bg-amber-600` : linkClasses
+              isActive ? `${linkClasses} bg-amber-600` : linkClasses
             }
           >
             <FaRegUser />
@@ -52,7 +52,7 @@ export default function NavBar() {
           <NavLink
             to="/settings"
             className={({ isActive }) =>
-              isActive ? `${linkClasses} active:bg-amber-600` : linkClasses
+              isActive ? `${linkClasses} bg-amber-600` : linkClasses
             }
           >
             <IoSettingsOutline />
