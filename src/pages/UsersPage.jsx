@@ -1,14 +1,14 @@
-import H2 from "./UI/H2.jsx";
-import Section from "./UI/Section.jsx";
+import H1 from "../components/UI/H1.jsx";
+import Section from "../components/UI/Section.jsx";
 import { FaRegUser } from "react-icons/fa";
 
 export default function Users() {
   return (
     <Section>
-      <H2>
+      <H1>
         <FaRegUser />
         Users
-      </H2>
+      </H1>
       <p>Manage your users here.</p>
     </Section>
   );

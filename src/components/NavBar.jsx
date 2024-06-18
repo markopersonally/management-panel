@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { IoSettingsOutline } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
 import { BsPencil } from "react-icons/bs";
@@ -9,34 +9,55 @@ export default function NavBar() {
   const ulClasses = "p-8 flex flex-col gap-5 ";
   const liClasses = "border-2";
   const linkClasses =
-    "w-30 p-2 flex gap-2 items-center bg-amber-700 hover:bg-amber-600 text-amber-100 text-lg duration-500";
+    "w-30 p-2 flex gap-2 items-center bg-amber-700 hover:bg-amber-600 active:bg-amber-600 text-amber-100 text-lg duration-500";
 
   return (
     <nav className={navClasses}>
       <ul className={ulClasses}>
         <li className={liClasses}>
-          <Link to="/" className={linkClasses}>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? `${linkClasses} active:bg-amber-600` : linkClasses
+            }
+            end
+          >
             <RxHome />
             Home
-          </Link>
+          </NavLink>
         </li>
         <li className={liClasses}>
-          <Link to="/dashboard" className={linkClasses}>
+          <NavLink
+            to="/dashboard"
+            className={({ isActive }) =>
+              isActive ? `${linkClasses} active:bg-amber-600` : linkClasses
+            }
+          >
             <BsPencil />
             Dashboard
-          </Link>
+          </NavLink>
         </li>
         <li className={liClasses}>
-          <Link to="/users" className={linkClasses}>
+          <NavLink
+            to="/users"
+            className={({ isActive }) =>
+              isActive ? `${linkClasses} active:bg-amber-600` : linkClasses
+            }
+          >
             <FaRegUser />
             Users
-          </Link>
+          </NavLink>
         </li>
         <li className={liClasses}>
-          <Link to="/settings" className={linkClasses}>
+          <NavLink
+            to="/settings"
+            className={({ isActive }) =>
+              isActive ? `${linkClasses} active:bg-amber-600` : linkClasses
+            }
+          >
             <IoSettingsOutline />
             Settings
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
