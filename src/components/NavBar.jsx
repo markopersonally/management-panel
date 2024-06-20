@@ -5,11 +5,11 @@ import { BsPencil } from "react-icons/bs";
 import { RxHome } from "react-icons/rx";
 
 export default function NavBar() {
-  const navClasses = "h-screen w-[250px] bg-amber-800";
+  const navClasses = "h-screen w-[250px] bg-amber-900";
   const ulClasses = "p-8 flex flex-col gap-5 ";
   const liClasses = "border-2";
   const linkClasses =
-    "w-30 p-2 flex gap-2 items-center bg-amber-700 hover:bg-amber-600 text-amber-100 text-lg duration-500";
+    "w-30 p-2 flex gap-2 items-center  hover:bg-amber-600 text-amber-100 text-lg duration-500";
 
   return (
     <nav className={navClasses}>
