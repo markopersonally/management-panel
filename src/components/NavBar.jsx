@@ -5,11 +5,11 @@ import { BsPencil } from "react-icons/bs";
 import { RxHome } from "react-icons/rx";
 
 export default function NavBar() {
-  const navClasses = "h-screen w-[250px] bg-amber-900";
+  const navClasses = "h-screen w-[250px] bg-slate-500";
   const ulClasses = "p-8 flex flex-col gap-5 ";
   const liClasses = "border-2";
   const linkClasses =
-    "w-30 p-2 flex gap-2 items-center  hover:bg-amber-600 text-amber-100 text-lg duration-500";
+    "w-30 p-2 flex gap-2 items-center hover:bg-slate-600 text-slate-100 text-lg duration-500";
 
   return (
     <nav className={navClasses}>
@@ -18,7 +18,7 @@ export default function NavBar() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? `${linkClasses} bg-amber-600` : linkClasses
+              isActive ? `${linkClasses} bg-slate-600` : linkClasses
             }
             end
           >
@@ -30,7 +30,7 @@ export default function NavBar() {
           <NavLink
             to="/dashboard"
             className={({ isActive }) =>
-              isActive ? `${linkClasses} bg-amber-600` : linkClasses
+              isActive ? `${linkClasses} bg-slate-600` : linkClasses
             }
           >
             <BsPencil />
@@ -41,7 +41,7 @@ export default function NavBar() {
           <NavLink
             to="/users"
             className={({ isActive }) =>
-              isActive ? `${linkClasses} bg-amber-600` : linkClasses
+              isActive ? `${linkClasses} bg-slate-600` : linkClasses
             }
           >
             <FaRegUser />
@@ -52,7 +52,7 @@ export default function NavBar() {
           <NavLink
             to="/settings"
             className={({ isActive }) =>
-              isActive ? `${linkClasses} bg-amber-600` : linkClasses
+              isActive ? `${linkClasses} bg-slate-600` : linkClasses
             }
           >
             <IoSettingsOutline />
