@@ -1,12 +1,20 @@
+import { useState } from "react";
 import H1 from "../components/UI/H1.jsx";
 import Section from "../components/UI/Section.jsx";
-import { FaRegUser } from "react-icons/fa";
-import { FaPlus } from "react-icons/fa";
+import { FaRegUser, FaPlus } from "react-icons/fa";
+import Settings from "./SettingsPage.jsx"; // Importujemy komponent z formularzem
 
-export default function Users() {
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log("form send");
+export default function UsersPage() {
+  const [showForm, setShowForm] = useState(false);
+  const [users, setUsers] = useState([]);
+
+  function handleCreateUser() {
+    setShowForm(true);
+  }
+
+  function handleAddUser(newUser) {
+    setUsers([...users, newUser]);
+    setShowForm(false);
   }
 
   return (
@@ -17,10 +25,21 @@ export default function Users() {
       </H1>
       <div className="m-10 bg-slate-500 text-slate-200 shadow-2xl border-2 border-slate-700 w-[200px] h-[200px] flex flex-col gap-4 text-xl justify-center items-center hover:scale-95 duration-300">
         <h3>Create User</h3>
-        <button onClick={handleSubmit} className="text-3xl">
+        <button onClick={handleCreateUser} className="text-3xl">
           <FaPlus />
         </button>
       </div>
+      {showForm && (
+        <Settings setShowForm={setShowForm} onAddUser={handleAddUser} />
+      )}
+      {users.map((user, index) => (
+        <div
+          key={index}
+          className="m-10 bg-slate-500 text-slate-200 shadow-2xl border-2 border-slate-700 w-[200px] h-[200px] flex flex-col gap-4 text-xl justify-center items-center hover:scale-95 duration-300"
+        >
+          <h3>{user.username}</h3>
+        </div>
+      ))}
     </Section>
   );
 }
