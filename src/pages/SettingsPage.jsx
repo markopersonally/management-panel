@@ -30,52 +30,9 @@ export default function Settings({ setShowForm, onAddUser }) {
         <IoSettingsOutline />
         Settings
       </H1>
-      <form className={formStyle}>
-        <Input
-          label="First Name"
-          id="firstName"
-          type="text"
-          name="firstName"
-          value={formData.firstName}
-          onChange={handleChange}
-        />
-        <Input
-          label="Last Name"
-          id="lastName"
-          type="text"
-          name="lastName"
-          value={formData.lastName}
-          onChange={handleChange}
-        />
-        <Input
-          label="Username"
-          id="username"
-          type="text"
-          name="username"
-          value={formData.username}
-          onChange={handleChange}
-        />
-        <Input
-          label="Email"
-          id="email"
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <button
-          onClick={handleSubmit}
-          className="mt-4 bg-blue-500 text-white p-2 rounded"
-        >
-          Submit
-        </button>
-        <button
-          onClick={() => setShowForm(false)}
-          className="mt-4 bg-red-500 text-white p-2 rounded ml-2"
-        >
-          Cancel
-        </button>
-      </form>
+      <div>
+        <h3>change data</h3>
+      </div>
     </Section>
   );
 }
