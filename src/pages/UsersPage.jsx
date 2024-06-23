@@ -23,7 +23,7 @@ export default function UsersPage() {
         <FaRegUser />
         Users
       </H1>
-      <div>
+      <div className="flex flex-wrap w-full">
         {users.map((user, index) => (
           <div
             key={index}
