@@ -1,3 +1,5 @@
 export default function Section({ children }) {
-  return <section>{children}</section>;
+  const sectionClasses = "h-screen";
+
+  return <section className={sectionClasses}>{children}</section>;
 }
