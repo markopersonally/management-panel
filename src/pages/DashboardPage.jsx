@@ -70,6 +70,7 @@ const options = {
   },
 };
 
+const divBoxItems = "grid grid-cols-3 gap-4";
 const divItems = "p-4 bg-white rounded shadow";
 const divItemsText = "text-xl font-bold";
 
@@ -84,7 +85,7 @@ export default function Dashboard() {
         <div className="mb-8">
           <Line data={data} options={options} />
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className={divBoxItems}>
           <div className={divItems}>
             <h2 className={divItemsText}>Statistics</h2>
             <p>Content goes here...</p>
