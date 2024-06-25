@@ -1,28 +1,9 @@
-import { useState } from "react";
-import Input from "../components/UI/Input.jsx";
 import H1 from "../components/UI/H1.jsx";
 import Section from "../components/UI/Section.jsx";
 import { IoSettingsOutline } from "react-icons/io5";
 
-const formStyle = "w-full rounded-3xl ml-10 p-10 bg-slate-500";
-
-export default function Settings({ setShowForm, onAddUser }) {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    username: "",
-    email: "",
-  });
-
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({ ...prevState, [name]: value }));
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    onAddUser(formData);
-  }
+export default function Settings() {
+  const boxChange = "mt-4 p-4 bg-slate-300";
 
   return (
     <Section>
@@ -30,8 +11,14 @@ export default function Settings({ setShowForm, onAddUser }) {
         <IoSettingsOutline />
         Settings
       </H1>
-      <div>
-        <h3>change data</h3>
+      <div className={boxChange}>
+        <h3>Change Data</h3>
+      </div>
+      <div className={boxChange}>
+        <h3>Change Product</h3>
+      </div>
+      <div className={boxChange}>
+        <h3>Change User</h3>
       </div>
     </Section>
   );
