@@ -6,11 +6,15 @@ import { FaUsersLine } from "react-icons/fa6";
 import { FaTasks } from "react-icons/fa";
 
 export default function Home() {
-  const boxInfoWrapper = "flex gap-4 text-xl";
+  const boxInfoWrapper = "flex gap-4 text-xl ";
   const boxInfo =
-    "w-[300px] h-[150px] text-orange-900 bg-orange-400 flex justify-center ";
-  const boxInfoData = "flex items-center";
-  const icon = "h-max p-2 border-2 border-orange-900 rounded-xl";
+    "p-4 w-[300px] h-[150px] bg-orange-400 text-orange-100 font-bold uppercase flex justify-center rounded-lg";
+  const boxInfoData = "flex items-center ";
+  const icon = "h-max p-2 border-2 border-orange-100 rounded-xl";
+  const boxProducts = "mt-10 p-10 w-[350px] border-2 bg-slate-300 rounded-3xl";
+  const h3Products = "p-2 text-center font-bold";
+  const divItemProducts = "mt-4 flex gap-4 items-center";
+  const imgProducts = "w-[25px] h-[25px] rounded-full";
 
   return (
     <Section>
@@ -39,6 +43,29 @@ export default function Home() {
           <div className={icon}>
             <FaTasks />
           </div>
+        </div>
+      </div>
+      <div className={boxProducts}>
+        <h3 className={h3Products}>Top Products:</h3>
+        <div className={divItemProducts}>
+          <img className={imgProducts} src="" alt="" />
+          <p>something</p>
+        </div>
+        <div className={divItemProducts}>
+          <img className={imgProducts} src="" alt="" />
+          <p>something</p>
+        </div>
+        <div className={divItemProducts}>
+          <img className={imgProducts} src="" alt="" />
+          <p>something</p>
+        </div>
+        <div className={divItemProducts}>
+          <img className={imgProducts} src="" alt="" />
+          <p>something</p>
+        </div>
+        <div className={divItemProducts}>
+          <img className={imgProducts} src="" alt="" />
+          <p>something</p>
         </div>
       </div>
     </Section>
