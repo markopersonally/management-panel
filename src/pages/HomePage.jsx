@@ -14,7 +14,7 @@ import item6 from "../images/pad.jpg";
 import item7 from "../images/security_2592258.png";
 
 export default function Home() {
-  const boxInfoWrapper = "flex gap-4 text-xl ";
+  const boxInfoWrapper = "flex gap-4 text-xl flex-wrap";
   const boxInfo =
     "p-4 w-[300px] h-[150px] bg-orange-400 text-orange-100 font-bold uppercase flex justify-center rounded-lg";
   const boxInfoData = "flex items-center ";
