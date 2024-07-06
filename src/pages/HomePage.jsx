@@ -16,11 +16,11 @@ import item7 from "../images/security_2592258.png";
 export default function Home() {
   const boxInfoWrapper = "flex gap-4 text-xl flex-wrap";
   const boxInfo =
-    "p-4 w-[300px] h-[150px] bg-orange-400 text-orange-100 font-bold uppercase flex justify-center rounded-lg";
+    "p-4 w-[300px] h-[150px] bg-orange-400 text-orange-100 font-bold uppercase flex justify-center rounded-lg border-4 border-orange-900 ";
   const boxInfoData = "flex items-center ";
   const icon = "h-max p-2 border-2 border-orange-100 rounded-xl";
   const boxProducts =
-    "my-10 p-10 w-[350px] h-[300px] border-2 bg-slate-300 rounded-3xl overflow-y-auto";
+    "my-10 p-10 w-[350px] h-[300px] border-2 border-slate-900 bg-slate-300 rounded-3xl overflow-y-auto scroll-smooth focus:cursor-auto";
   const h3Products = "p-2 text-center font-bold ";
   const divItemProducts =
     "my-4 p-2 flex gap-4 items-center border-2 border-slate-900 rounded-xl shadow-xl bg-slate-100 ";
