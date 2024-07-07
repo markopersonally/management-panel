@@ -3,7 +3,7 @@ import Section from "../components/UI/Section.jsx";
 import { IoSettingsOutline } from "react-icons/io5";
 
 export default function Settings() {
-  const boxChange = "mt-4 p-4 bg-slate-300";
+  const boxChange = "mt-4 p-4 bg-slate-300 border-2 border-slate-400 hover:bg-slate-400 duration-500 cursor-pointer";
 
   return (
     <Section>
