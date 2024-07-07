@@ -100,9 +100,13 @@ export default function Dashboard() {
         Dashboard
       </H1>
       <div className="p-8">
-        <div className="mb-8 flex gap-10">
-          <Line data={lineData} options={options} />
-          <Pie data={pieData} options={options} />
+        <div className="w-max h-max mb-8 flex gap-10">
+          <div>
+            <Line data={lineData} options={options} />
+          </div>
+          <div>
+            <Pie data={pieData} options={options} />
+          </div>
         </div>
         <div className={divBoxItems}>
           {[
