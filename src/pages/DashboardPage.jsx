@@ -88,8 +88,10 @@ const options = {
   },
 };
 
+const content = "p-8";
+const divChart = "w-max h-max mb-8 flex gap-10";
 const divBoxItems = "grid grid-cols-3 gap-4";
-const divItems = "p-4 bg-white rounded shadow";
+const divItems = "p-4 bg-white rounded shadow hover:bg-slate-400 duration-500";
 const divItemsText = "text-xl font-bold";
 
 export default function Dashboard() {
@@ -99,8 +101,8 @@ export default function Dashboard() {
         <BsPencil />
         Dashboard
       </H1>
-      <div className="p-8">
-        <div className="w-max h-max mb-8 flex gap-10">
+      <div className={content}>
+        <div className={divChart}>
           <div>
             <Line data={lineData} options={options} />
           </div>
