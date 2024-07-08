@@ -9,7 +9,7 @@ import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 export default function NavBar() {
   const [navVisible, setNavVisible] = useState(true);
 
-  const navClasses = "h-screen w-[250px] bg-slate-500";
+  const navClasses = "absolute h-screen w-[250px] bg-slate-500";
   const ulClasses = "p-8 flex flex-col gap-5 ";
   const liClasses = "border-2";
   const linkClasses =
@@ -74,18 +74,18 @@ export default function NavBar() {
               Settings
             </NavLink>
           </li>
-        </ul>
+        </ul>{" "}
+        {!navVisible && (
+          <button className={btnClasses} onClick={handleShowNav}>
+            <AiFillCaretRight />
+          </button>
+        )}
+        {navVisible && (
+          <button className={btnClasses} onClick={handleHideNav}>
+            <AiFillCaretLeft />
+          </button>
+        )}
       </nav>
-      {!navVisible && (
-        <button className={btnClasses} onClick={handleShowNav}>
-          <AiFillCaretRight />
-        </button>
-      )}
-      {navVisible && (
-        <button className={btnClasses} onClick={handleHideNav}>
-          <AiFillCaretLeft />
-        </button>
-      )}
     </>
   );
 }
