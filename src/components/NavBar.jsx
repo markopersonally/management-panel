@@ -15,7 +15,9 @@ export default function NavBar() {
   const linkClasses =
     "w-30 p-2 flex gap-2 items-center hover:bg-slate-600 text-slate-100 text-lg duration-500";
   const btnClasses =
-    "p-2 my-auto bg-cyan-600 text-cyan-200 text-2xl hover:bg-cyan-900 rounded-r-lg duration-300";
+    "absolute top-1/2 -right-8 transform -translate-y-1/2 p-2 bg-cyan-600 text-cyan-200 text-2xl hover:bg-cyan-900 rounded-r-lg duration-300";
+  const btnHiddenClasses =
+    "absolute top-1/2 -left-8 transform -translate-y-1/2 p-2 bg-cyan-600 text-cyan-200 text-2xl hover:bg-cyan-900 rounded-l-lg duration-300";
 
   const handleShowNav = () => {
     setNavVisible(true);
@@ -74,18 +76,19 @@ export default function NavBar() {
               Settings
             </NavLink>
           </li>
-        </ul>{" "}
-        {!navVisible && (
-          <button className={btnClasses} onClick={handleShowNav}>
-            <AiFillCaretRight />
-          </button>
-        )}
-        {navVisible && (
+        </ul>
+      </nav>
+      <div className="absolute top-2">
+        {navVisible ? (
           <button className={btnClasses} onClick={handleHideNav}>
             <AiFillCaretLeft />
           </button>
+        ) : (
+          <button className={btnHiddenClasses} onClick={handleShowNav}>
+            <AiFillCaretRight />
+          </button>
         )}
-      </nav>
+      </div>
     </>
   );
 }
