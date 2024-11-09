@@ -1,6 +1,4 @@
 import { useState } from "react";
-import H1 from "../components/UI/H1.jsx";
-import Section from "../components/UI/Section.jsx";
 import { FaRegUser, FaPlus } from "react-icons/fa";
 import Form from "../components/Form.jsx";
 
@@ -18,11 +16,11 @@ export default function UsersPage() {
   }
 
   return (
-    <Section>
-      <H1>
+    <section>
+      <h1>
         <FaRegUser />
         Users
-      </H1>
+      </h1>
       <div className="flex flex-wrap w-full">
         {users.map((user, index) => (
           <div
@@ -39,7 +37,7 @@ export default function UsersPage() {
           </button>
         </div>
       </div>
-      {showForm && <Form setShowForm={setShowForm} onAddUser={handleAddUser} />}
-    </Section>
+      {/* {showForm && <Form setShowForm={setShowForm} onAddUser={handleAddUser} />} */}
+    </section>
   );
 }

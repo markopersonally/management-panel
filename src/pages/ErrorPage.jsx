@@ -1,4 +1,3 @@
-import H1 from "../components/UI/H1.jsx";
 import NavBar from "../components/NavBar";
 
 function ErrorPage() {
@@ -6,7 +5,7 @@ function ErrorPage() {
     <>
       <main className="flex">
         <NavBar />
-        <H1>An error occurred!</H1>
+        <h1>An error occurred!</h1>
         <p>Could not find this page!</p>
       </main>
     </>
