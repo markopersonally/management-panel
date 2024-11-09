@@ -9,86 +9,62 @@ import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 export default function NavBar() {
   const [navVisible, setNavVisible] = useState(true);
 
-  const navClasses = "p-4 absolute h-max w-[250px] bg-slate-500 rounded-br-lg";
-  const ulClasses = "p-8 flex flex-col gap-5 ";
-  const liClasses = "border-2";
-  const linkClasses =
-    "w-30 p-2 flex gap-2 items-center hover:bg-slate-600 text-slate-100 text-lg duration-500";
-  const btnClasses =
-    "absolute p-2 bg-cyan-600 text-cyan-200 text-2xl hover:bg-cyan-900 rounded-r-lg duration-300";
-  const btnHiddenClasses =
-    "absolute p-2 bg-cyan-600 text-cyan-200 text-2xl hover:bg-cyan-900 rounded-l-lg duration-300";
-
-  const handleShowNav = () => {
-    setNavVisible(true);
-  };
-
-  const handleHideNav = () => {
-    setNavVisible(false);
-  };
+  const navItems = [
+    { to: "/", icon: <RxHome className="text-xl" />, label: "Home" },
+    {
+      to: "/dashboard",
+      icon: <BsPencil className="text-xl" />,
+      label: "Dashboard",
+    },
+    { to: "/users", icon: <FaRegUser className="text-xl" />, label: "Users" },
+    {
+      to: "/settings",
+      icon: <IoSettingsOutline className="text-xl" />,
+      label: "Settings",
+    },
+  ];
 
   return (
     <>
-      <nav className={`${navClasses} ${navVisible ? "block" : "hidden"}`}>
-        <ul className={ulClasses}>
-          <li className={liClasses}>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? `${linkClasses} bg-slate-600` : linkClasses
-              }
-              end
-            >
-              <RxHome />
-              Home
-            </NavLink>
-          </li>
-          <li className={liClasses}>
-            <NavLink
-              to="/dashboard"
-              className={({ isActive }) =>
-                isActive ? `${linkClasses} bg-slate-600` : linkClasses
-              }
-            >
-              <BsPencil />
-              Dashboard
-            </NavLink>
-          </li>
-          <li className={liClasses}>
-            <NavLink
-              to="/users"
-              className={({ isActive }) =>
-                isActive ? `${linkClasses} bg-slate-600` : linkClasses
-              }
-            >
-              <FaRegUser />
-              Users
-            </NavLink>
-          </li>
-          <li className={liClasses}>
-            <NavLink
-              to="/settings"
-              className={({ isActive }) =>
-                isActive ? `${linkClasses} bg-slate-600` : linkClasses
-              }
-            >
-              <IoSettingsOutline />
-              Settings
-            </NavLink>
-          </li>
-        </ul>
+      <nav
+        className={`fixed left-0 top-0 h-full bg-gradient-to-b from-blue-600 to-blue-800 text-white transition-all duration-300 ease-in-out ${
+          navVisible ? "w-64" : "w-16"
+        }`}
+      >
+        <div className="flex h-full flex-col justify-between p-4">
+          <ul className="space-y-2">
+            {navItems.map((item) => (
+              <li key={item.to}>
+                <NavLink
+                  to={item.to}
+                  className={({ isActive }) =>
+                    `flex items-center rounded-lg p-2 transition-colors duration-200 hover:bg-blue-700 ${
+                      isActive ? "bg-blue-700" : ""
+                    }`
+                  }
+                  end={item.to === "/"}
+                >
+                  {item.icon}
+                  <span className={`ml-3 ${navVisible ? "block" : "hidden"}`}>
+                    {item.label}
+                  </span>
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+          <button
+            onClick={() => setNavVisible(!navVisible)}
+            className="self-end rounded-full bg-blue-500 p-2 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+          >
+            {navVisible ? <AiFillCaretLeft /> : <AiFillCaretRight />}
+          </button>
+        </div>
       </nav>
-      <div className="absolute top-2 l-2">
-        {navVisible ? (
-          <button className={btnClasses} onClick={handleHideNav}>
-            <AiFillCaretLeft />
-          </button>
-        ) : (
-          <button className={btnHiddenClasses} onClick={handleShowNav}>
-            <AiFillCaretRight />
-          </button>
-        )}
-      </div>
+      <div
+        className={`transition-all duration-300 ease-in-out ${
+          navVisible ? "ml-64" : "ml-16"
+        }`}
+      ></div>
     </>
   );
 }

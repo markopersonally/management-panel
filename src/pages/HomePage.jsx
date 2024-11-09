@@ -1,5 +1,3 @@
-import H1 from "../components/UI/H1.jsx";
-import Section from "../components/UI/Section.jsx";
 import { RxHome } from "react-icons/rx";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { FaUsersLine } from "react-icons/fa6";
@@ -14,80 +12,70 @@ import item6 from "../images/pad.jpg";
 import item7 from "../images/security_2592258.png";
 
 export default function Home() {
-  const boxInfoWrapper = "flex gap-4 text-xl flex-wrap";
-  const boxInfo =
-    "p-4 w-[300px] h-[150px] bg-orange-400 text-orange-100 font-bold uppercase flex justify-center rounded-lg border-4 border-orange-900 ";
-  const boxInfoData = "flex items-center ";
-  const icon = "h-max p-2 border-2 border-orange-100 rounded-xl";
-  const boxProducts =
-    "my-10 p-10 w-[350px] h-[300px] border-2 border-slate-900 bg-slate-300 rounded-3xl overflow-y-auto scroll-smooth focus:cursor-auto";
-  const h3Products = "p-2 text-center font-bold ";
-  const divItemProducts =
-    "my-4 p-2 flex gap-4 items-center border-2 border-slate-900 rounded-xl shadow-xl bg-slate-100 ";
-  const imgProducts =
-    "w-[35px] h-[35px] rounded-full border-2 border-slate-900 shadow-2xl";
-  const titleProducts = "font-bold capitalize";
+  const products = [
+    { img: item1, name: "camera" },
+    { img: item2, name: "board" },
+    { img: item3, name: "cookies" },
+    { img: item4, name: "cup" },
+    { img: item5, name: "knife" },
+    { img: item6, name: "pad" },
+    { img: item7, name: "padlock" },
+  ];
 
   return (
-    <Section>
-      <H1>
-        <RxHome />
+    <section className="container mx-auto px-4 py-8 bg-gradient-to-br from-blue-50 to-teal-50 min-h-screen">
+      <h1 className="text-3xl font-bold mb-8 flex items-center gap-2 text-blue-700">
+        <RxHome className="text-teal-500" />
         Home
-      </H1>
-      <div className={boxInfoWrapper}>
-        <div className={boxInfo}>
-          <h3>products</h3>
-          <span className={boxInfoData}>170</span>
-          <div className={icon}>
-            <MdOutlineProductionQuantityLimits />
-          </div>
-        </div>
-        <div className={boxInfo}>
-          <h3>total customers</h3>
-          <span className={boxInfoData}>21470</span>
-          <div className={icon}>
-            <FaUsersLine />
-          </div>
-        </div>
-        <div className={boxInfo}>
-          <h3>task progress</h3>
-          <span className={boxInfoData}>77%</span>
-          <div className={icon}>
-            <FaTasks />
-          </div>
+      </h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <InfoBox
+          title="Products"
+          value="170"
+          icon={<MdOutlineProductionQuantityLimits />}
+        />
+        <InfoBox
+          title="Total Customers"
+          value="21,470"
+          icon={<FaUsersLine />}
+        />
+        <InfoBox title="Task Progress" value="77%" icon={<FaTasks />} />
+      </div>
+      <div className="bg-white rounded-lg shadow-lg p-6 border border-teal-200">
+        <h3 className="text-xl font-semibold mb-4 text-blue-700">
+          Top Products:
+        </h3>
+        <div className="space-y-4 max-h-[400px] overflow-y-auto pr-4">
+          {products.map((product, index) => (
+            <ProductItem key={index} img={product.img} name={product.name} />
+          ))}
         </div>
       </div>
-      <div className={boxProducts}>
-        <h3 className={h3Products}>Top Products:</h3>
-        <div className={divItemProducts}>
-          <img className={imgProducts} src={item1} alt="camera" />
-          <p className={titleProducts}>camera</p>
-        </div>
-        <div className={divItemProducts}>
-          <img className={imgProducts} src={item2} alt="board" />
-          <p className={titleProducts}>board</p>
-        </div>
-        <div className={divItemProducts}>
-          <img className={imgProducts} src={item3} alt="cookies" />
-          <p className={titleProducts}>cookies</p>
-        </div>
-        <div className={divItemProducts}>
-          <img className={imgProducts} src={item4} alt="cup" />
-          <p className={titleProducts}>cup</p>
-        </div>
-        <div className={divItemProducts}>
-          <img className={imgProducts} src={item5} alt="knife" />
-          <p className={titleProducts}>knife</p>
-        </div>
-        <div className={divItemProducts}>
-          <img className={imgProducts} src={item6} alt="pad" />
-          <p className={titleProducts}>pad</p>
-        </div>
-        <div className={divItemProducts}>
-          <img className={imgProducts} src={item7} alt="padlock" />
-          <p className={titleProducts}>padlock</p>
-        </div>
+    </section>
+  );
+}
+
+function InfoBox({ title, value, icon }) {
+  return (
+    <div className="bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg shadow-lg p-6 flex items-center justify-between text-white">
+      <div>
+        <h3 className="text-sm font-medium text-blue-100 uppercase">{title}</h3>
+        <span className="text-3xl font-bold">{value}</span>
       </div>
-    </Section>
+      <div className="text-3xl bg-white/20 p-3 rounded-full">{icon}</div>
+    </div>
+  );
+}
+
+function ProductItem({ img, name }) {
+  return (
+    <div className="flex items-center gap-4 bg-gradient-to-r from-blue-50 to-teal-50 rounded-lg p-4 transition-all hover:shadow-md hover:from-blue-100 hover:to-teal-100">
+      <img
+        src={img}
+        alt={name}
+        className="w-12 h-12 rounded-full object-cover border-2 border-teal-300"
+      />
+      <p className="font-medium capitalize text-blue-700">{name}</p>
+    </div>
   );
 }
